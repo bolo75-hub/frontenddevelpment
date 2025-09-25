@@ -1,0 +1,52 @@
+/*
+type selector: we use the name of an element to select
+all of the same type elements*/
+h1 {
+
+    background-color: aquamarine;
+    border: 6px;
+    border-style: solid;
+    /*By default, width and heigth properties definde the size of the content box*/
+    width: 300px;
+    height: fit-content;
+    /*control the space between the border and the content box*/
+    /**se usa para controlar el espacio entre los bordes y el contenido*/
+    padding: 90px;
+    padding-top: 200px;
+    /**es para controlar el espacio entre este elemento con otros*/
+    margin: 20px;
+
+
+}
+
+h2 {
+    background-color: aquamarine;
+    border: 6px;
+    border-style: solid;
+    /*By default, width and heigth properties definde the size of the content box*/
+    width: 300px;
+    height: fit-content;
+    /*control the space between the border and the content box*/
+    /**se usa para controlar el espacio entre los bordes y el contenido*/
+    padding: 90px;
+    padding-top: 200px;
+    /**es para controlar el espacio entre este elemento con otros*/
+    margin: 20px;
+
+}
+
+h3 {
+    background-color: aquamarine;
+    border: 6px;
+    border-style: solid;
+    /*By default, width and heigth properties definde the size of the content box*/
+    width: 300px;
+    height: fit-content;
+    /*control the space between the border and the content box*/
+    /**se usa para controlar el espacio entre los bordes y el contenido*/
+    padding: 90px;
+    padding-top: 200px;
+    /**es para controlar el espacio entre este elemento con otros*/
+    margin: 20px;
+
+}
