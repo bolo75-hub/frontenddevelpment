@@ -1,52 +1,42 @@
-/*
-type selector: we use the name of an element to select
-all of the same type elements*/
-h1 {
+/* 
+-----------------------------------------
+ Type Selector (h1, h2, h3)
+ -----------------------------------------
+ Usamos el nombre de la etiqueta para aplicar
+ estilos a todos los elementos de ese tipo.
+-----------------------------------------
+*/
 
-    background-color: aquamarine;
-    border: 6px;
-    border-style: solid;
-    /*By default, width and heigth properties definde the size of the content box*/
-    width: 300px;
+h1, h2, h3 {
+    /* Fondo con color suave y moderno */
+    background: linear-gradient(135deg, #a0f0d0, #d0fff4);
+
+    /* Borde sutil y redondeado */
+    border: 3px solid #5ec2a0;
+    border-radius: 20px;
+
+    /* Tamaño y distribución del contenido */
+    width: 320px;
     height: fit-content;
-    /*control the space between the border and the content box*/
-    /**se usa para controlar el espacio entre los bordes y el contenido*/
-    padding: 90px;
-    padding-top: 200px;
-    /**es para controlar el espacio entre este elemento con otros*/
-    margin: 20px;
+    padding: 60px 40px;
+    margin: 30px auto;
 
+    /* Sombra elegante para dar profundidad */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 
+    /* Fuente moderna y centrada */
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+    color: #064e3b;
+
+    /* Animación sutil al pasar el ratón */
+    transition: all 0.3s ease;
 }
 
-h2 {
-    background-color: aquamarine;
-    border: 6px;
-    border-style: solid;
-    /*By default, width and heigth properties definde the size of the content box*/
-    width: 300px;
-    height: fit-content;
-    /*control the space between the border and the content box*/
-    /**se usa para controlar el espacio entre los bordes y el contenido*/
-    padding: 90px;
-    padding-top: 200px;
-    /**es para controlar el espacio entre este elemento con otros*/
-    margin: 20px;
-
+/* Efecto hover */
+h1:hover, h2:hover, h3:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+    background: linear-gradient(135deg, #88e5c0, #c0fff0);
 }
 
-h3 {
-    background-color: aquamarine;
-    border: 6px;
-    border-style: solid;
-    /*By default, width and heigth properties definde the size of the content box*/
-    width: 300px;
-    height: fit-content;
-    /*control the space between the border and the content box*/
-    /**se usa para controlar el espacio entre los bordes y el contenido*/
-    padding: 90px;
-    padding-top: 200px;
-    /**es para controlar el espacio entre este elemento con otros*/
-    margin: 20px;
-
-}
