@@ -1,0 +1,71 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+}
+
+div {
+  border: 2px solid rgb(255, 0, 0);
+  border-radius: 4px;
+  box-shadow: 5px 2px rgb(255, 0, 0);
+  margin: 10px;
+  width: fit-content;
+  /* What the relative positioning does is that the element 
+  applied with relative positioning will remain in its original 
+  position, when we change its position using "left/rigth/top/bottom"
+  it moves relative to this original position
+  */
+  position: relative;
+  padding: 1rem;
+
+}
+
+div:nth-child(even){
+ left: 20vw;
+}
+
+body>h1 {
+  width: 30px;
+}
+
+
+h2 {
+  background-color: antiquewhite;
+  border: 2px solid black;
+  width: fit-content;
+  position: sticky;
+  /*The following four parameters are used to control the position of this element
+  with respect to the viewport*/
+  /*The position of the top border of this element relative to the viewport */
+
+  top: 0px;
+  left: auto;
+  right: auto;
+  bottom: auto;
+
+}
+.poem-images{
+  width: 5vw;
+  border-radius: 1vw;
+  /*The absolute positioning remove the element from its normal flow on the page, 
+  the browser then looks for it the clossest superior container which is not static,
+  if there is no such parent element, the html element will be selected as its
+  container element.*/
+  position: absolute;
+
+  /*use the following atributes to determine the absolute positioning element´s
+  position relative to its closest non static container.*/
+  top: 1vw;
+  right: 1vw;
+}
+
+nav{
+  position: fixed;
+  background-color: antiquewhite;
+  z-index: 5;
+  margin: 4vw;
+  padding: 1vw;
+}
+main{
+  margin-top: 4vw;
+  
+}

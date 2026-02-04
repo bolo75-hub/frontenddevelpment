@@ -1,26 +1,36 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CV - Peces Premium</title>
+  <title>Peces Premium</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/myprofile.css">
 </head>
 
 <body>
+  <!-- HEADER -->
   <header>
-    <img src="../img/pez-payaso.jpg" alt="logo" width="600" height="300" class="small-profile-img">
-    <h1>Peces Premium</h1>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="../img/pez-payaso.jpg" alt="logo">
+        <h1>Peces Premium</h1>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#about">Sobre Nosotros</a></li>
+        <li><a href="#projects-section">Proyectos</a></li>
+        <li><a href="#experience-style">Experiencia</a></li>
+      </ul>
+    </nav>
   </header>
 
   <main>
-    <!-- SECCIÓN SOBRE LOS PECES -->
-    <section id="projects-section">
-      <h1>Sobre los peces que tenemos</h1>
-
-      <div class="contenedor">
-        <div class="about-me-column-2" id="about-me-column-21">
+    <!-- SOBRE LOS PECES -->
+    <section id="about" class="about-section">
+      <div class="about-container">
+        <div class="about-text">
+          <h2>Sobre los peces que tenemos</h2>
           <p>
             En nuestra web encontrarás una amplia variedad de peces ideales para acuarios de agua dulce y salada.
             Contamos con especies populares como los guppys, betta, mollys y tetras, perfectos para principiantes.
@@ -29,87 +39,82 @@
             Todos nuestros peces provienen de criadores certificados y se entregan en óptimas condiciones para garantizar su bienestar.
           </p>
         </div>
-
-        <div class="derecha">
+        <div class="about-image">
           <img src="../img/foto-de-pez-amarillo.jpg" alt="Pez amarillo">
         </div>
       </div>
     </section>
 
-    <!-- SECCIÓN DE PROYECTOS -->
-    <section class="proyect-section">
-      <h1>Mis proyectos</h1>
-
-      <div class="projects-container">
-        <div class="Myprojects-colum-4">
-          <h2>decoracion</h2>
+    <!-- PROYECTOS -->
+    <section id="projects-section" class="projects">
+      <h2>Mis Proyectos</h2>
+      <div class="projects-grid">
+        <div class="card">
+          <img src="../img/decoracion.jpg" alt="Decoración">
+          <h3>Decoración</h3>
         </div>
-
-        <div class="Myprojects-colum-4">
-          <h2>peceras</h2>
+        <div class="card">
+          <img src="../img/pecera.jpg" alt="Peceras">
+          <h3>Peceras</h3>
         </div>
-
-        <div class="Myprojects-colum-4">
-          <h2>peces tropicales</h2>
+        <div class="card">
+          <img src="../img/tropicales.jpg" alt="Peces tropicales">
+          <h3>Peces tropicales</h3>
         </div>
-
-        <div class="Myprojects-colum-4">
-          <h2>Acuarios marinos</h2>
+        <div class="card">
+          <img src="../img/marino.jpg" alt="Acuarios marinos">
+          <h3>Acuarios marinos</h3>
         </div>
-
-        <div class="Myprojects-colum-4">
-          <h2>Plantas acuáticas</h2>
+        <div class="card">
+          <img src="../img/plantas.jpg" alt="Plantas acuáticas">
+          <h3>Plantas acuáticas</h3>
         </div>
-
-        <div class="Myprojects-colum-4">
-          <h2>Accesorios</h2>
+        <div class="card">
+          <img src="../img/accesorios.jpg" alt="Accesorios">
+          <h3>Accesorios</h3>
         </div>
       </div>
     </section>
 
-    <!-- SECCIÓN DE EXPERIENCIA -->
-    <section id="experience-style">
+    <!-- EXPERIENCIA -->
+    <section id="experience-style" class="experience">
       <h2>Experiencia</h2>
-      <div>
-        <table class="experience-table-style">
-          <tr>
-            <td>Ocean World</td>
-            <td>Biólogo Marino</td>
-            <td>De 2035 a 2040</td>
-          </tr>
-          <tr>
-            <td>AquaLife</td>
-            <td>Investigador Acuático</td>
-            <td>De 2040 a 2045</td>
-          </tr>
-          <tr>
-            <td>Blue Reef Center</td>
-            <td>Cuidador de Peces Tropicales</td>
-            <td>De 2045 a 2050</td>
-          </tr>
-        </table>
-      </div>
+      <table>
+        <tr>
+          <th>Empresa</th>
+          <th>Puesto</th>
+          <th>Años</th>
+        </tr>
+        <tr>
+          <td>Ocean World</td>
+          <td>Biólogo Marino</td>
+          <td>De 2035 a 2040</td>
+        </tr>
+        <tr>
+          <td>AquaLife</td>
+          <td>Investigador Acuático</td>
+          <td>De 2040 a 2045</td>
+        </tr>
+        <tr>
+          <td>Blue Reef Center</td>
+          <td>Cuidador de Peces Tropicales</td>
+          <td>De 2045 a 2050</td>
+        </tr>
+      </table>
     </section>
   </main>
 
- <footer>
-<div class="footer-content-left">
-<a href="https://github.com/bolo75-hub/Javafundamentals2">
-<img src="../img/676.jpg" alt="" class="footer-icon-style" height="50px" width="50px">
-</a>
-<a href="https://github.com/bolo75-hub/Javafundamentals2">
-<img src="../img/tristo.webp" alt="" class="footer-icon-style"height="50px" width="50px">
-</a>
-</div>
-
-<div class="footer-content-right">
-<a href="#">Home</a>
-<!-- point to a page in the same application -->
-<a href="./cssboxmodel.html">About</a>
-<!-- jump to a specific part of the same page using id -->
-<a href="#projects-section">My Projects</a>
-</div>
-</footer>
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-icons">
+      <a href="https://github.com/bolo75-hub/Javafundamentals2">
+        <img src="../img/676.jpg" alt="GitHub">
+      </a>
+      <a href="https://github.com/bolo75-hub/Javafundamentals2">
+        <img src="../img/tristo.webp" alt="GitHub">
+      </a>
+    </div>
+    <p>© 2025 Peces Premium | Diseñado con ❤️ por bolo75</p>
+  </footer>
 </body>
-
 </html>
