@@ -69,3 +69,7 @@ main{
   margin-top: 4vw;
   
 }
+.logo{
+  max-width: 10vw;
+  min-width: 3vw;
+}

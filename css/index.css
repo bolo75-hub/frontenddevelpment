@@ -1,0 +1,38 @@
+*{
+    font-family: ;
+    border: 1px solid black;
+}
+
+.logo{
+    max-width: 10vw;
+    min-width: 3vw;
+}
+/* > is direct child selector */
+nav>ul{
+
+    list-style: none;
+    /*"display" is a property used to organize a group of elements */
+    /* "flex" is a one dimensional display style, which
+    distribute the elements inside the flex container along
+    the main axis*/
+    display: flex;
+    /* choose the main axis direction along which the flex items
+    are positioned */
+    flex-direction: row;
+    /*choose the way to distribute the flex items along the main axis */
+    /* center /flex-start/flex-end/space-around/space-evenly/space-between */
+    justify-content: space-around;
+    /* This property is used to align the group of 
+    flex items along the cross axis */
+    align-items: center;
+
+    /* We use this atribute to control how the elements
+    are show when they surpass the width*/
+    flex-wrap: wrap;
+
+}
+nav>ul>a{
+    margin: 4vw; 
+
+    
+}

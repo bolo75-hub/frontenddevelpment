@@ -1,271 +1,146 @@
 /* ===== GENERAL ===== */
+/* Selector universal: aplica a todos los elementos */
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box; /* Incluye padding y borde en el tamaño total */
+  margin: 0;              /* Elimina márgenes por defecto */
+  padding: 0;             /* Elimina rellenos por defecto */
+  font-family: 'Poppins', sans-serif; /* Fuente principal */
 }
 
+/* Estilos generales del body */
 body {
-  background-color: #0e0e0e;
-  color: white;
-  scroll-behavior: smooth;
+  background-color: #0e0e0e; /* Color de fondo oscuro */
+  color: white;              /* Color del texto */
+  scroll-behavior: smooth;   /* Desplazamiento suave al hacer scroll */
+
+  /* Layout con CSS Grid */
+  display: grid;
+  grid-template-rows: auto 1fr auto; /* Header - contenido - footer */
+  min-height: 100vh;                 /* Altura mínima de la ventana */
 }
 
 /* ===== HEADER ===== */
 header {
+  /* Fondo degradado */
   background: linear-gradient(135deg, rgb(240,76,76), #8b1b1b);
-  border-bottom: 3px solid #111;
-  box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
-  position: sticky;
-  top: 0;
-  z-index: 10;
+  position: sticky; /* Se queda fijo al hacer scroll */
+  top: 0;           /* Pegado arriba */
 }
 
+/* Barra de navegación */
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 50px;
+  display: flex;                    /* Layout flexible */
+  justify-content: space-between;  /* Espacio entre logo y menú */
+  align-items: center;             /* Alineación vertical */
+  padding: 2vh 5vw;                /* Espaciado interno */
 }
 
+/* Contenedor del logo */
 .logo {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 1rem; /* Espacio entre imagen y texto */
 }
 
+/* Imagen del logo */
 .logo img {
   width: 60px;
   height: 60px;
-  border-radius: 50%;
-  border: 2px solid white;
+  border-radius: 50%; /* Imagen redonda */
 }
 
+/* Texto del logo */
 .logo h1 {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 1.8em;
-  letter-spacing: 2px;
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 25px;
-}
-
-.nav-links a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s, text-shadow 0.3s;
-}
-
-.nav-links a:hover {
-  color: #ffdcdc;
-  text-shadow: 0 0 8px #ff0000;
+  font-size: 1.8rem;
+  font-family: 'Orbitron', sans-serif; /* Fuente diferente */
 }
 
 /* ===== ABOUT ===== */
+/* Sección "Sobre nosotros" */
 .about-section {
-  padding: 80px 10%;
-  background-color: #141414;
+  padding: 10vh 10vw; /* Espaciado vertical y horizontal */
 }
 
+/* Contenedor del texto e imagen */
 .about-container {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 40px;
-  flex-wrap: wrap;
+  gap: 2rem;       /* Espacio entre columnas */
+  flex-wrap: wrap;/* Permite que bajen en pantallas pequeñas */
 }
 
-.about-text {
-  flex: 1;
-  min-width: 300px;
-}
-
+/* Título de la sección */
 .about-text h2 {
-  color: rgb(240, 76, 76);
-  font-family: 'Orbitron', sans-serif;
-  margin-bottom: 20px;
-  font-size: 2em;
+  font-size: 2rem;
+  margin-bottom: 1rem;
 }
 
-.about-text p {
-  line-height: 1.7;
-  background-color: rgb(240,76,76);
-  border-radius: 12px;
-  padding: 20px;
-  color: white;
-  box-shadow: 0 0 20px rgba(255,0,0,0.3);
-}
-
+/* Imagen del about */
 .about-image img {
-  width: 350px;
-  border-radius: 15px;
-  border: 2px solid rgb(240, 76, 76);
-  box-shadow: 0 0 25px rgba(255,0,0,0.4);
+  width: 30vw;       /* Tamaño relativo a la pantalla */
+  max-width: 350px;  /* Tamaño máximo */
 }
 
-/* ===== PROYECTOS ===== */
+/* ===== PROJECTS ===== */
+/* Sección de proyectos */
 .projects {
-  padding: 80px 10%;
+  padding: 10vh 10vw;
   text-align: center;
-  background: #1a1a1a;
 }
 
-.projects h2 {
-  color: rgb(240, 76, 76);
-  font-family: 'Orbitron', sans-serif;
-  margin-bottom: 40px;
-}
-
+/* Grid de tarjetas */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 30px;
-  position: relative;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Grid adaptable */
+  gap: 2rem;
 }
-
-/* TARJETAS DE PROYECTOS */
-.card {
-  background-color: #111;
-  border-radius: 15px;
-  overflow: hidden;
-  border: 2px solid rgb(240,76,76);
-  box-shadow: 0 0 15px rgba(255,0,0,0.3);
-  transition: transform 0.3s, box-shadow 0.3s;
-  text-align: center;
-  position: relative;
-}
-
-/* Efecto de brillo animado */
-.card::before {
-  content: "";
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  width: calc(100% + 4px);
-  height: calc(100% + 4px);
-  border-radius: 15px;
-  background: linear-gradient(45deg, rgba(255, 0, 0, 0.2), rgba(255,255,255,0.1), rgba(255, 0, 0, 0.2));
-  background-size: 300%;
-  z-index: 1;
-  opacity: 0;
-  transition: opacity 0.4s ease;
-}
-
-.card:hover::before {
-  opacity: 1;
-  animation: neonMove 1.5s linear infinite;
-}
-
-@keyframes neonMove {
-  0% { background-position: 0% 50%; }
-  100% { background-position: 200% 50%; }
-}
-
+g
+/* Imagen de cada tarjeta */
 .card img {
+  height: 25vh;
   width: 100%;
-  height: 180px;
-  object-fit: cover;
-  display: block;
-  border-bottom: 2px solid rgb(240, 76, 76);
-  transition: transform 0.4s ease;
-  z-index: 2;
-  position: relative;
+  object-fit: cover; /* Ajusta la imagen sin deformarla */
 }
 
+/* Título de la tarjeta */
 .card h3 {
-  color: white;
-  padding: 12px 0;
-  font-family: 'Orbitron', sans-serif;
-  background-color: rgb(240, 76, 76);
-  letter-spacing: 1px;
-  margin: 0;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-  position: relative;
-  z-index: 2;
+  font-size: 1.1rem;
 }
 
-/* Hover Effects */
-.card:hover {
-  transform: translateY(-8px) scale(1.03);
-  box-shadow: 0 0 30px rgba(255,0,0,0.8);
-}
-
-.card:hover img {
-  transform: scale(1.08);
-}
-
-/* ===== EXPERIENCIA ===== */
+/* ===== EXPERIENCE ===== */
+/* Sección de experiencia */
 .experience {
-  padding: 80px 10%;
-  background-color: #141414;
-  text-align: center;
-}
-
-.experience h2 {
-  color: rgb(240,76,76);
-  font-family: 'Orbitron', sans-serif;
-  margin-bottom: 30px;
-}
-
-.experience table {
-  width: 100%;
-  border-collapse: collapse;
-  background-color: #1f1f1f;
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-.experience th {
-  background-color: rgb(240,76,76);
-  color: white;
-  padding: 15px;
-}
-
-.experience td {
-  padding: 15px;
-  border-top: 1px solid #333;
-}
-
-.experience tr:nth-child(even) {
-  background-color: #222;
+  padding: 10vh 10vw;
 }
 
 /* ===== FOOTER ===== */
+/* Pie de página */
 footer {
-  background: linear-gradient(135deg, #8b1b1b, rgb(240,76,76));
   text-align: center;
-  padding: 30px 20px;
-  border-top: 3px solid #111;
-  box-shadow: 0 -4px 20px rgba(255,0,0,0.4);
+  padding: 3vh;
 }
 
-.footer-icons {
-  margin-bottom: 15px;
-}
-
-.footer-icons img {
-  width: 50px;
-  height: 50px;
-  margin: 0 10px;
-  border-radius: 50%;
-  border: 2px solid white;
-  transition: transform 0.3s;
-}
-
-.footer-icons img:hover {
-  transform: scale(1.15);
-}
-
+/* Texto del footer */
 footer p {
-  color: white;
-  font-size: 0.9em;
-  letter-spacing: 1px;
+  font-size: 0.9rem;
 }
 
+/* ===== RESPONSIVE ===== */
+/* Estilos para pantallas pequeñas */
+@media (max-width: 768px) {
 
+  /* Navbar en columna */
+  .navbar {
+    flex-direction: column;
+  }
+
+  /* About en columna */
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  /* Imagen más grande en móvil */
+  .about-image img {
+    width: 80vw;
+  }
+}
