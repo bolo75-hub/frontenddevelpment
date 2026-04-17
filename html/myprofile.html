@@ -1,38 +1,36 @@
 <!DOCTYPE html>
-<!-- Declaración del tipo de documento HTML5 -->
 <html lang="es">
-<!-- Idioma del documento: español -->
 
 <head>
-  <!-- Codificación de caracteres -->
   <meta charset="UTF-8">
 
-  <!-- Configuración para diseño responsive en móviles -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Título que aparece en la pestaña del navegador -->
   <title>Peces Premium</title>
 
-  <!-- Fuentes de Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Poppins:wght@300;500&display=swap"
+    rel="stylesheet">
 
-  <!-- Enlace a la hoja de estilos CSS externa -->
   <link rel="stylesheet" href="../css/myprofile.css">
+  <link rel="stylesheet" href="../html/theme.css">
 </head>
 
 <body>
-  <!-- Cabecera principal de la página -->
   <header>
-    <!-- Barra de navegación -->
     <nav class="navbar">
-      
-      <!-- Logo y nombre de la web -->
+
       <div class="logo">
-        <img src="../img/pez-payaso.jpg" alt="logo">
+        <img src="../img/pez-payaso.jpg" alt="Logo Peces Premium">
         <h1>Peces Premium</h1>
       </div>
+       <div class="controls">
+      <button class="theme-btn" data-theme="light">☀️ Light</button>
+      <button class="theme-btn" data-theme="dark">🌙 Dark</button>
+      <button class="theme-btn" data-theme="neon">🧪 Neon</button>
+      <button class="theme-btn" data-theme="forest">🌲 Forest</button>
+    </div>
 
-      <!-- Enlaces del menú de navegación -->
+
       <ul class="nav-links">
         <li><a href="#">Inicio</a></li>
         <li><a href="#about">Sobre Nosotros</a></li>
@@ -42,88 +40,94 @@
     </nav>
   </header>
 
-  <!-- Contenido principal de la página -->
   <main>
 
-    <!-- Sección "Sobre Nosotros" -->
     <section id="about" class="about-section">
       <div class="about-container">
-
-        <!-- Texto descriptivo -->
         <div class="about-text">
           <h2>Sobre los peces que tenemos</h2>
           <p>
             En nuestra web encontrarás una amplia variedad de peces ideales para acuarios de agua dulce y salada.
             Contamos con especies populares como los guppys, betta, mollys y tetras, perfectos para principiantes.
             También ofrecemos peces ángel, discos y cíclidos africanos para aficionados más experimentados.
-            Si prefieres un acuario marino, disponemos de pez payaso, cirujano azul y gobios.  
-            Todos nuestros peces provienen de criadores certificados y se entregan en óptimas condiciones para garantizar su bienestar.
+            Si prefieres un acuario marino, disponemos de pez payaso, cirujano azul y gobios.
+            Todos nuestros peces provienen de criadores certificados y se entregan en óptimas condiciones para
+            garantizar su bienestar.
           </p>
         </div>
 
-        <!-- Imagen de la sección -->
         <div class="about-image">
-          <img src="../img/foto-de-pez-amarillo.jpg" alt="Pez amarillo">
+          <img src="../img/foto-de-pez-amarillo.jpg" alt="Pez amarillo tropical">
         </div>
       </div>
     </section>
 
-    <!-- Sección de proyectos -->
     <section id="projects-section" class="projects">
       <h2>Mis Proyectos</h2>
 
-      <!-- Cuadrícula de tarjetas -->
       <div class="projects-grid">
-        <div class="card"><img src="../img/decoracion.jpg"><h3>Decoración</h3></div>
-        <div class="card"><img src="../img/pecera.jpg"><h3>Peceras</h3></div>
-        <div class="card"><img src="../img/tropicales.jpg"><h3>Peces tropicales</h3></div>
-        <div class="card"><img src="../img/marino.jpg"><h3>Acuarios marinos</h3></div>
-        <div class="card"><img src="../img/plantas.jpg"><h3>Plantas acuáticas</h3></div>
-        <div class="card"><img src="../img/accesorios.jpg"><h3>Accesorios</h3></div>
+        <div class="card"><img src="../img/decoracion.jpg" alt="Decoración de acuarios">
+          <h3>Decoración</h3>
+        </div>
+        <div class="card"><img src="../img/pecera.jpg" alt="Peceras de cristal">
+          <h3>Peceras</h3>
+        </div>
+        <div class="card"><img src="../img/tropicales.jpg" alt="Peces de agua tropical">
+          <h3>Peces tropicales</h3>
+        </div>
+        <div class="card"><img src="../img/marino.jpg" alt="Arrecife marino">
+          <h3>Acuarios marinos</h3>
+        </div>
+        <div class="card"><img src="../img/plantas.jpg" alt="Plantas acuáticas naturales">
+          <h3>Plantas acuáticas</h3>
+        </div>
+        <div class="card"><img src="../img/accesorios.jpg" alt="Accesorios para limpieza">
+          <h3>Accesorios</h3>
+        </div>
       </div>
     </section>
-
-    <!-- Sección de experiencia profesional -->
+   
     <section id="experience-style" class="experience">
       <h2>Experiencia</h2>
 
-      <!-- Tabla con la experiencia laboral -->
       <table>
-        <tr>
-          <th>Empresa</th>
-          <th>Puesto</th>
-          <th>Años</th>
-        </tr>
-        <tr>
-          <td>Ocean World</td>
-          <td>Biólogo Marino</td>
-          <td>2035–2040</td>
-        </tr>
-        <tr>
-          <td>AquaLife</td>
-          <td>Investigador Acuático</td>
-          <td>2040–2045</td>
-        </tr>
-        <tr>
-          <td>Blue Reef Center</td>
-          <td>Cuidador de Peces</td>
-          <td>2045–2050</td>
-        </tr>
+        <thead>
+          <tr>
+            <th>Empresa</th>
+            <th>Puesto</th>
+            <th>Años</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Ocean World</td>
+            <td>Biólogo Marino</td>
+            <td>2035–2040</td>
+          </tr>
+          <tr>
+            <td>AquaLife</td>
+            <td>Investigador Acuático</td>
+            <td>2040–2045</td>
+          </tr>
+          <tr>
+            <td>Blue Reef Center</td>
+            <td>Cuidador de Peces</td>
+            <td>2045–2050</td>
+          </tr>
+        </tbody>
       </table>
     </section>
   </main>
 
-  <!-- Pie de página -->
   <footer>
-
-    <!-- Iconos o imágenes del footer -->
     <div class="footer-icons">
-      <img src="../img/676.jpg">
-      <img src="../img/tristo.webp">
+      <img src="../img/676.jpg" alt="Icono 1">
+      <img src="../img/tristo.webp" alt="Icono 2">
     </div>
+    <p>&copy; 2026 Peces Premium - Todos los derechos reservados.</p>
 
-    <!-- Texto de derechos de autor -->
-    <p>© 2025 Peces Premium | Diseñado con ❤️ por bolo75</p>
+    <script src="../html/theme.js"></script>
   </footer>
 </body>
+
 </html>

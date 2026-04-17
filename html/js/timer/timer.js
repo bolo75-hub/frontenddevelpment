@@ -22,7 +22,7 @@ timerDysplay.style.fontSize = "150px"; // cambiar tamaño
 
 
 //ARROW FUNCTION AS PARAMETER
-stopBtn.addEventListener("click", () => { });
+stopBtn.addEventListener("click", () => { });4
 let fontSize = 20;
 let maximumSize = 80;
 let minimumSize = 20;

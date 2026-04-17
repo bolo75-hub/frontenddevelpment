@@ -1,146 +1,204 @@
 /* ===== GENERAL ===== */
-/* Selector universal: aplica a todos los elementos */
 * {
-  box-sizing: border-box; /* Incluye padding y borde en el tamaño total */
-  margin: 0;              /* Elimina márgenes por defecto */
-  padding: 0;             /* Elimina rellenos por defecto */
-  font-family: 'Poppins', sans-serif; /* Fuente principal */
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
 }
 
-/* Estilos generales del body */
 body {
-  background-color: #0e0e0e; /* Color de fondo oscuro */
-  color: white;              /* Color del texto */
-  scroll-behavior: smooth;   /* Desplazamiento suave al hacer scroll */
-
-  /* Layout con CSS Grid */
+  /* Quitamos el color fijo y ponemos la transición para el cambio de tema */
+  background-color: #f4f4f4;
+  /* Color por defecto (Light) */
+  color: #333;
+  /* Texto por defecto */
+  scroll-behavior: smooth;
   display: grid;
-  grid-template-rows: auto 1fr auto; /* Header - contenido - footer */
-  min-height: 100vh;                 /* Altura mínima de la ventana */
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+  transition: all 0.5s ease;
+  /* CRUCIAL para que el cambio de tema sea suave */
 }
 
 /* ===== HEADER ===== */
 header {
-  /* Fondo degradado */
-  background: linear-gradient(135deg, rgb(240,76,76), #8b1b1b);
-  position: sticky; /* Se queda fijo al hacer scroll */
-  top: 0;           /* Pegado arriba */
+  /* Cambiamos background fijo por uno que podamos sobreescribir */
+  background: #eee;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: background 0.5s ease;
 }
 
-/* Barra de navegación */
 .navbar {
-  display: flex;                    /* Layout flexible */
-  justify-content: space-between;  /* Espacio entre logo y menú */
-  align-items: center;             /* Alineación vertical */
-  padding: 2vh 5vw;                /* Espaciado interno */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2vh 5vw;
 }
 
-/* Contenedor del logo */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: inherit;
+  /* Hereda el color del tema actual */
+  font-weight: 500;
+}
+
 .logo {
   display: flex;
   align-items: center;
-  gap: 1rem; /* Espacio entre imagen y texto */
+  gap: 1rem;
 }
 
-/* Imagen del logo */
 .logo img {
   width: 60px;
   height: 60px;
-  border-radius: 50%; /* Imagen redonda */
+  border-radius: 50%;
+  object-fit: cover;
 }
 
-/* Texto del logo */
 .logo h1 {
   font-size: 1.8rem;
-  font-family: 'Orbitron', sans-serif; /* Fuente diferente */
+  font-family: 'Orbitron', sans-serif;
 }
 
-/* ===== ABOUT ===== */
-/* Sección "Sobre nosotros" */
-.about-section {
-  padding: 10vh 10vw; /* Espaciado vertical y horizontal */
-}
-
-/* Contenedor del texto e imagen */
-.about-container {
-  display: flex;
-  gap: 2rem;       /* Espacio entre columnas */
-  flex-wrap: wrap;/* Permite que bajen en pantallas pequeñas */
-}
-
-/* Título de la sección */
-.about-text h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-/* Imagen del about */
-.about-image img {
-  width: 30vw;       /* Tamaño relativo a la pantalla */
-  max-width: 350px;  /* Tamaño máximo */
-}
-
-/* ===== PROJECTS ===== */
-/* Sección de proyectos */
-.projects {
-  padding: 10vh 10vw;
-  text-align: center;
-}
-
-/* Grid de tarjetas */
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Grid adaptable */
-  gap: 2rem;
-}
-g
-/* Imagen de cada tarjeta */
-.card img {
-  height: 25vh;
-  width: 100%;
-  object-fit: cover; /* Ajusta la imagen sin deformarla */
-}
-
-/* Título de la tarjeta */
-.card h3 {
-  font-size: 1.1rem;
-}
-
-/* ===== EXPERIENCE ===== */
-/* Sección de experiencia */
+/* ===== SECCIONES Y CARDS ===== */
+.about-section,
+.projects,
 .experience {
   padding: 10vh 10vw;
 }
 
-/* ===== FOOTER ===== */
-/* Pie de página */
-footer {
-  text-align: center;
-  padding: 3vh;
+.about-container {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
 }
 
-/* Texto del footer */
-footer p {
-  font-size: 0.9rem;
+.about-image img {
+  width: 30vw;
+  max-width: 350px;
+  border-radius: 15px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.card {
+  background: white;
+  /* Fondo por defecto */
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.5s ease;
+}
+
+.card img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+/* ===== TABLAS ===== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th,
+td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+/* ===== CONFIGURACIÓN DE TEMAS (Basado en tus fotos) ===== */
+
+/* Modo Oscuro (Dark) */
+body.dark {
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+body.dark header {
+  background: #111;
+}
+
+body.dark .card {
+  background-color: #333;
+  color: white;
+}
+
+body.dark th {
+  background-color: #444;
+}
+
+/* Modo Neón (Neon) */
+body.neon {
+  background-color: #000;
+  color: #39ff14;
+}
+
+body.neon header {
+  background: #000;
+  border-bottom: 2px solid #39ff14;
+}
+
+body.neon .card {
+  background-color: #111;
+  border: 1px solid #39ff14;
+  box-shadow: 0 0 10px #39ff14;
+}
+
+body.neon th {
+  border: 1px solid #39ff14;
+}
+
+/* Modo Bosque (Forest) */
+body.forest {
+  background-color: #2d5a27;
+  color: #fdf5e6;
+}
+
+body.forest header {
+  background: #1b3d17;
+}
+
+body.forest .card {
+  background-color: #1e3f1a;
 }
 
 /* ===== RESPONSIVE ===== */
-/* Estilos para pantallas pequeñas */
 @media (max-width: 768px) {
-
-  /* Navbar en columna */
   .navbar {
     flex-direction: column;
+    gap: 1rem;
   }
 
-  /* About en columna */
   .about-container {
     flex-direction: column;
     text-align: center;
   }
 
-  /* Imagen más grande en móvil */
   .about-image img {
     width: 80vw;
   }
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
