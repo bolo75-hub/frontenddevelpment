@@ -1,204 +1,78 @@
-/* ===== GENERAL ===== */
+/* Reset básico para que no haya espacios raros */
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-shadow: border-box;
 }
 
 body {
-  /* Quitamos el color fijo y ponemos la transición para el cambio de tema */
-  background-color: #f4f4f4;
-  /* Color por defecto (Light) */
-  color: #333;
-  /* Texto por defecto */
-  scroll-behavior: smooth;
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-  min-height: 100vh;
-  transition: all 0.5s ease;
-  /* CRUCIAL para que el cambio de tema sea suave */
+    font-family: 'Poppins', sans-serif;
 }
 
-/* ===== HEADER ===== */
-header {
-  /* Cambiamos background fijo por uno que podamos sobreescribir */
-  background: #eee;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  transition: background 0.5s ease;
-}
-
+/* ESTO ARREGLA EL HEADER */
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 2vh 5vw;
+    display: flex;
+    justify-content: space-between; /* Separa los grupos a los extremos */
+    align-items: center;
+    padding: 15px 30px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.nav-links {
-  display: flex;
-  list-style: none;
-  gap: 20px;
+/* El grupo de la derecha (botones y links) */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
 
-.nav-links a {
-  text-decoration: none;
-  color: inherit;
-  /* Hereda el color del tema actual */
-  font-weight: 500;
-}
-
+/* El logo en el centro */
 .logo {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .logo img {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  object-fit: cover;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
 }
 
-.logo h1 {
-  font-size: 1.8rem;
-  font-family: 'Orbitron', sans-serif;
+/* El cronómetro a la izquierda */
+.stopwatch {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #00ffcc; /* Color neón por defecto */
+    min-width: 100px;
 }
 
-/* ===== SECCIONES Y CARDS ===== */
-.about-section,
-.projects,
-.experience {
-  padding: 10vh 10vw;
+/* Quitar los puntos de la lista y ponerla en horizontal */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 15px;
 }
 
+.nav-links a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 0.9rem;
+}
+
+/* Tu sección de texto e imagen para que no ocupe toda la pantalla */
 .about-container {
-  display: flex;
-  gap: 2rem;
-  flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    padding: 50px;
+    gap: 40px;
 }
 
+.about-text { flex: 1; }
 .about-image img {
-  width: 30vw;
-  max-width: 350px;
-  border-radius: 15px;
-}
-
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
-.card {
-  background: white;
-  /* Fondo por defecto */
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: all 0.5s ease;
-}
-
-.card img {
-  height: 200px;
-  width: 100%;
-  object-fit: cover;
-  border-radius: 5px;
-}
-
-/* ===== TABLAS ===== */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
-}
-
-th,
-td {
-  padding: 12px;
-  border: 1px solid #ddd;
-  text-align: left;
-}
-
-/* ===== CONFIGURACIÓN DE TEMAS (Basado en tus fotos) ===== */
-
-/* Modo Oscuro (Dark) */
-body.dark {
-  background-color: #1a1a1a;
-  color: #ffffff;
-}
-
-body.dark header {
-  background: #111;
-}
-
-body.dark .card {
-  background-color: #333;
-  color: white;
-}
-
-body.dark th {
-  background-color: #444;
-}
-
-/* Modo Neón (Neon) */
-body.neon {
-  background-color: #000;
-  color: #39ff14;
-}
-
-body.neon header {
-  background: #000;
-  border-bottom: 2px solid #39ff14;
-}
-
-body.neon .card {
-  background-color: #111;
-  border: 1px solid #39ff14;
-  box-shadow: 0 0 10px #39ff14;
-}
-
-body.neon th {
-  border: 1px solid #39ff14;
-}
-
-/* Modo Bosque (Forest) */
-body.forest {
-  background-color: #2d5a27;
-  color: #fdf5e6;
-}
-
-body.forest header {
-  background: #1b3d17;
-}
-
-body.forest .card {
-  background-color: #1e3f1a;
-}
-
-/* ===== RESPONSIVE ===== */
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .about-container {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .about-image img {
-    width: 80vw;
-  }
-}
-
-.controls {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
+    max-width: 400px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
