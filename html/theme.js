@@ -1,21 +1,36 @@
-// Obtener todos los botones de tema usando el selector de clase
 const btns = document.querySelectorAll(".theme-btn");
 
-// Obtener el objeto body
 const bd = document.querySelector("body");
 
-// Iterar todos los botones para asociar a cada uno una tarea
-// que queremos ejecutar cuando ocurra un evento de clic
-for (let index = 0; index < btns.length; index++) {
+/**for (let index = 0; index < btns.length; index++) {
     const btn = btns[index];
     
     btn.addEventListener("click", () => {
-        // Extraer el nombre del tema desde el atributo data-theme
         const selectedTheme = btn.getAttribute("data-theme");
-        
         console.log("Cambiando a tema: " + selectedTheme);
-        
-        // Cambiar la clase del body por el nombre del tema
         bd.className = selectedTheme;
     });
+}*/
+
+
+/** 
+localStorage.setItem("theme", "dark");
+const theme = localStorage.getItem("theme");
+console.log("current theme = " + theme);*/
+
+
+const theme = localStorage.getItem("theme");
+if(theme){
+    bd.className = theme;
 }
+
+console.log(btns);
+btns.forEach(btn => {
+    console.log(btn),
+    btn.addEventListener("click", () => {
+        console.log(btn.getAttribute('data-theme'));
+        console.log(btn.getAttribute('class'));
+        bd.className = btn.getAttribute('data-theme');    
+        localStorage.setItem("theme", btn.getAttribute("data-theme"))
+    });
+});
