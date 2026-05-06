@@ -1,7 +1,7 @@
-const MIM_PARTICLE_SIZE = 0.2;
+const MIM_PARTICLE_SIZE = 10;
 const MIM_SPEED_X = 1;
 const MIM_SPEED_Y = 1;
-const NUM_OF_PARTICLES = 10;
+const NUM_OF_PARTICLES = 3;
 const canvas = document.getElementById("smoke_canvas");
 console.log(canvas);
 const ctx = canvas.getContext("2d");
@@ -17,11 +17,16 @@ class Smoke {
     }
 
     animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
         for (let index = 0; index < this.particles.length; index++) {
             //update the states of the particles and draw it to the screen
             this.particles[index].update();
+            if(this.particles[index].size <= 0.2) {
+                this.particles.splice(index, 1);
+                index--;
+            }
         }
-        requestAnimationFrame(animate);
+        requestAnimationFrame(() => this.animate());
     }
 }
 class Particle {
@@ -36,7 +41,7 @@ class Particle {
 
     //update the current states of a particle
     update() {
-        this.size -= -1;
+        this.size -= 0.1;
         //this.size = this.size -1;
 
         this.draw();
