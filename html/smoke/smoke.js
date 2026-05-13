@@ -6,7 +6,13 @@ const canvas = document.getElementById("smoke_canvas");
 console.log(canvas);
 const ctx = canvas.getContext("2d");
 
-
+function resize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+}
+window.addEventListener("resize", resize);
+window.dispatchEvent(new Event('resize'));
+resize()
 class Smoke {
     constructor() {
         this.particles = [];
@@ -42,6 +48,8 @@ class Particle {
     //update the current states of a particle
     update() {
         this.size -= 0.1;
+        this.x += this.speedX;
+        this.y += this.speedY;
         //this.size = this.size -1;
 
         this.draw();
